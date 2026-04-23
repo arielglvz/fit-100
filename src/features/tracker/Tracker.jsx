@@ -18,8 +18,3 @@ export default function TrackerTable() {
     </div>
   )
 }
-
-
-  if (percent === 0) return "#EBEDF0"
-  if (percent < 50) return "#9BE9A8"
-  if (percent < 100) return "#40C463"
