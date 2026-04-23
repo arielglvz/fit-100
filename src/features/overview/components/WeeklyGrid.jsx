@@ -1,7 +1,7 @@
 import { groupByWeek } from "../utils/groupByWeek"
 import { getCompletionColor } from "../utils/getCompletionColor"
 import Bento from "@/components/Bento"
-import { activity_legend } from "@/features/tracker/data"
+import { activity_legend } from "@/features/overview/data"
 
 export default function WeeklyGrid({ activities, onSelect }) {
   const weeks = groupByWeek(activities)
@@ -11,7 +11,7 @@ export default function WeeklyGrid({ activities, onSelect }) {
       <div className="flex items-center justify-between">
         <div className="w-max flex items-center justify-between gap-2">
           {activity_legend.map((item) => (
-            <div className="flex items-center gap-1.5">
+            <div key={item.label} className="flex items-center gap-1.5">
               <div
                 className="w-2 h-2 border-muted rounde-sm"
                 style={{ backgroundColor: item.color }}

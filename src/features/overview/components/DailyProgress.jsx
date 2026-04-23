@@ -17,7 +17,7 @@ const DailyProgress = ({ progress }) => {
           <p className="text-foreground font-semibold text-title">Tuesday</p>
         </div>
         <div className="leading-none">
-          <p className="font-bold text-[40px] text-foreground">68%</p>
+          <p className="font-bold text-[40px] text-[#40C463]">68%</p>
           <p className="text-small font-semibold text-label text-right uppercase">
             complete
           </p>
@@ -25,7 +25,7 @@ const DailyProgress = ({ progress }) => {
       </div>
       <div className="h-2.5 w-full bg-surface-progress overflow-hidden rounded-full shadow">
         <div
-          className="h-full bg-foreground transition-all duration-500 ease-out"
+          className="h-full transition-all duration-500 ease-out bg-[#40C463]"
           style={{ width: `${dailyProgress}%` }}
         />
       </div>

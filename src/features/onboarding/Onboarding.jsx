@@ -26,7 +26,7 @@ const Onboarding = () => {
   return (
     <div className="h-screen bg-background">
       {/* Header */}
-      <div className="py-4 w-full max-h-16 px-5 flex items-center justify-between">
+      <div className="py-4 w-full max-h-16 px-5 flex items-center justify-between border-b-2 border-b-muted">
         <p className="text-header font-bold">Performance</p>
         <div className="flex items-center gap-3">
           <div className="w-16 h-1.5 bg-surface-progress rounded-md overflow-hidden shadow">
@@ -37,8 +37,8 @@ const Onboarding = () => {
           </p>
         </div>
       </div>
-      <div className="px-5 flex-1 overflow-y-auto space-y-3">
-        <hr className="text-muted" />
+      <div className="px-5 py-6 flex-1 overflow-y-auto space-y-3">
+        {/* <hr className="text-muted" /> */}
         <div className="flex flex-col items-left space-y-2">
           <h1 className="text-h1 font-bold">Personal Profile</h1>
           <p className="max-w-60 text-body text-secondary letter-spacing">
@@ -194,7 +194,7 @@ const Onboarding = () => {
                 })}
               </div>
             </div>
-            <div className="text-small text-muted text-center">
+            <div className="py-4 text-small text-muted text-center">
               "{activities[currentActivity].desc}"
             </div>
           </div>

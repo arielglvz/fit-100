@@ -1,12 +1,13 @@
 import { useState } from "react"
 import Sidebar from "@/components/Sidebar"
 import { Menu } from "lucide-react"
+import { cn } from "@/lib/cn"
 
-export default function MainLayout({ children }) {
+export default function MainLayout({ background, children }) {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="flex h-screen bg-gray-50">
+    <div className={cn("flex h-screen", background)}>
       <Sidebar isOpen={open} onClose={() => setOpen(false)} />
 
       <div className="flex-1 flex flex-col">
@@ -20,7 +21,7 @@ export default function MainLayout({ children }) {
         </div>
 
         {/* Content */}
-        <main className="flex-1 overflow-y-auto p-4">
+        <main className="flex-1 overflow-y-auto">
           <div className="max-w-5xl">{children}</div>
         </main>
       </div>

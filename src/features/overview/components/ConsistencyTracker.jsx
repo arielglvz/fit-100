@@ -4,7 +4,9 @@ const ConsistencyTracker = () => {
   return (
     <div className="">
       <div className="">
-        <p className="">CONSISTENCY TRACKER</p>
+        <p className="text-small font-semibold text-label uppercase">
+          CONSISTENCY TRACKER
+        </p>
         <p className="">100-Day View</p>
       </div>
       <Bento>

@@ -5,7 +5,7 @@ const DayStreak = () => {
   return (
     <Bento className="p-5 flex items-center justify-between">
       <div className="flex items-center gap-3">
-        <Bento className="bg-background-muted">
+        <Bento className="w-max ">
           <Zap className="text-primary" />
         </Bento>
         <div className="">

@@ -1,8 +1,7 @@
-import Onboarding from "@/features/onboarding/Onboarding"
-import Overview from "@/features/overview/Overview"
+import Analytics from "@/features/analytics/Analytics"
 
 function App() {
-  return <Overview />
+  return <Analytics />
 }
 
 export default App

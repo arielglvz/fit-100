@@ -4,10 +4,8 @@ import React from "react"
 const Bento = ({ children, className }) => {
   return (
     <div
-      className={cn(
-        "h-max p-2 border-2 border-foreground-light rounded-md bg-primary-foreground",
-        className,
-      )}
+      className={cn("bg-white rounded-3xl p-6 w-full max-w-sm", className)}
+      style={{ boxShadow: "0 2px 24px 0 rgba(0,0,0,0.07)" }}
     >
       {children}
     </div>
