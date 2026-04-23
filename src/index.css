@@ -1,0 +1,96 @@
+@import "tailwindcss";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+
+/* =========================
+   THEME TOKENS
+========================= */
+@theme {
+  /* COLORS */
+  --color-background: #f9f9f9;
+  --color-background-muted: #fafafa;
+  --color-foreground: #1b1b1b;
+  --color-foreground-light: #e2e2e2;
+  --color-foreground-muted: #71717a;
+
+  --color-primary: #000000;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #5e5e5e;
+  --color-muted: #a1a1aa;
+
+  --color-normal: #848484;
+  --color-label: #4c4546;
+  --color-header: #18181b;
+
+  --color-border: #e5e5e5;
+  --color-border-strong: #d4d4d8;
+
+  /* SUCCESS (progress) */
+  --color-success: #166534;
+  --color-success-bg: #dcfce7;
+
+  /* ERROR */
+  --color-error: #ba1a1a;
+  --color-error-bg: #ffdad6;
+
+  /* SURFACE */
+  --color-surface: #ffffff;
+  --color-surface-muted: #f3f3f3;
+  --color-surface-progress: #f4f4f5;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+@theme {
+  --font-sans: "Inter", sans-serif;
+
+  /* TYPE SCALE (reduced & intentional) */
+  --text-display: 36px;
+  --text-title: 32px;
+  --text-h1: 28px;
+  --text-h2: 22px;
+  --text-h3: 16px;
+
+  --text-body: 14px;
+  --text-small: 12px;
+
+  /* LINE HEIGHT */
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-loose: 1.7;
+
+  /* TRACKING */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.04em;
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+/* =========================
+   COMPONENTS
+========================= */
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition;
+  }
+  .btn-primary {
+    @apply px-4 py-2 rounded-md font-medium transition bg-black text-white hover:opacity-90;
+  }
+  .btn-secondary {
+    @apply px-4 py-2 rounded-md font-medium transition border-(--color-border) text-black bg-white hover:bg-gray-100;
+  }
+  .btn-ghost {
+    @apply px-4 py-2 rounded-md font-medium transition text-gray-500 hover:text-black;
+  }
+}
