@@ -1,4 +1,4 @@
-const CustomRadio = ({ title, options, value, onChange, name }) => {
+export const Radio = ({ title, options, value, onChange, name }) => {
   return (
     <div className="space-y-2">
       <p className="text-xs font-bold tracking-wide uppercase text-secondary">
@@ -41,5 +41,3 @@ const CustomRadio = ({ title, options, value, onChange, name }) => {
     </div>
   )
 }
-
-export default CustomRadio

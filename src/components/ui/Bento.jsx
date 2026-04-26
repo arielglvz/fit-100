@@ -1,7 +1,7 @@
 import { cn } from "@/lib/cn"
 import React from "react"
 
-const Bento = ({ children, className }) => {
+export const Bento = ({ children, className }) => {
   return (
     <div
       className={cn("bg-white rounded-3xl p-6 w-full max-w-sm", className)}
@@ -11,5 +11,3 @@ const Bento = ({ children, className }) => {
     </div>
   )
 }
-
-export default Bento

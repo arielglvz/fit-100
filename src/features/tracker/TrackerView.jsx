@@ -1,7 +1,7 @@
 import WeeklyGrid from "@/features/overview/components/WeeklyGrid"
 import { mockActivities } from "@/features/overview/mockActivities"
 
-export default function TrackerTable() {
+export default function TrackerView() {
   const handleSelect = (day) => {
     console.log("Clicked day:", day)
   }

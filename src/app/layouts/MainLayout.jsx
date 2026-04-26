@@ -1,9 +1,11 @@
 import { useState } from "react"
-import Sidebar from "@/components/Sidebar"
+
 import { Menu } from "lucide-react"
 import { cn } from "@/lib/cn"
+import { Sidebar } from "@/components/ui/Sidebar"
+import { Outlet } from "react-router-dom"
 
-export default function MainLayout({ background, children }) {
+export default function MainLayout({ background }) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -22,7 +24,9 @@ export default function MainLayout({ background, children }) {
 
         {/* Content */}
         <main className="flex-1 overflow-y-auto">
-          <div className="max-w-5xl">{children}</div>
+          <div className="max-w-5xl">
+            <Outlet />
+          </div>
         </main>
       </div>
     </div>

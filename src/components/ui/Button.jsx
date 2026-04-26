@@ -1,6 +1,6 @@
 import { cn } from "@/lib/cn"
 
-const CustomButton = ({
+export const Button = ({
   className,
   label,
   children,
@@ -20,5 +20,3 @@ const CustomButton = ({
     </button>
   )
 }
-
-export default CustomButton

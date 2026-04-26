@@ -1,6 +1,6 @@
-import CustomButton from "@/components/CustomButton"
-import { CustomInput } from "@/components/CustomInput"
-import CustomRadio from "@/components/CustomRadio"
+import { Button } from "@/components/ui/Button"
+import { Input } from "@/components/ui/Input"
+import { Radio } from "@/components/ui/Radio"
 import { activities, gender, objectives } from "@/features/onboarding/data"
 import { updateFormField } from "@/lib/helpers"
 import { useState } from "react"
@@ -49,7 +49,7 @@ const Onboarding = () => {
 
         <form onSubmit={handleForm} className="py-4 space-y-4">
           {/* GENDER */}
-          <CustomRadio
+          <Radio
             title="GENDER"
             options={gender}
             value={form.gender}
@@ -59,7 +59,7 @@ const Onboarding = () => {
 
           <div className="flex gap-3">
             {/* AGE */}
-            <CustomInput
+            <Input
               id="age"
               className="text-h2 font-bold"
               label="AGE"
@@ -200,12 +200,12 @@ const Onboarding = () => {
           </div>
 
           {/* SUbmit */}
-          <CustomButton
+          <Button
             type="submit"
             className="py-5 px-3 w-full flex items-center font-semibold gap-2 rounded-lg shadow"
           >
             <p>Continue to Nutrition</p>
-          </CustomButton>
+          </Button>
 
           <p
             className="text-secondary text-body text-center font-medium"

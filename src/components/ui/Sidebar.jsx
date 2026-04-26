@@ -2,7 +2,7 @@ import { useState } from "react"
 import { cn } from "@/lib/cn"
 import { Minimize2, PanelTopOpen } from "lucide-react"
 
-const Sidebar = ({ isOpen, onClose }) => {
+export const Sidebar = ({ isOpen, onClose }) => {
   const [collapsed, setCollapsed] = useState(false)
 
   const navItems = [
@@ -69,5 +69,3 @@ const Sidebar = ({ isOpen, onClose }) => {
     </>
   )
 }
-
-export default Sidebar

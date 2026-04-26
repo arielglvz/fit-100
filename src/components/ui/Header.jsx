@@ -1,6 +1,6 @@
 import React from "react"
 
-const Header = () => {
+export const Header = () => {
   return (
     <div className="flex justify-between">
       <p>Performance</p>
@@ -13,5 +13,3 @@ const Header = () => {
     </div>
   )
 }
-
-export default Header

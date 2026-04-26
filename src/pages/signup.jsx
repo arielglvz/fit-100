@@ -1,8 +1,7 @@
-import Bento from "@/components/Bento"
-import CustomButton from "@/components/CustomButton"
-import { CustomInput } from "@/components/CustomInput"
+import { Bento } from "@/components/ui/Bento"
+import { Button } from "@/components/ui/Button"
+import { Input } from "@/components/ui/Input"
 import { updateFormField } from "@/lib/helpers"
-import { ArrowRight } from "lucide-react"
 import { useState } from "react"
 
 const fields = [
@@ -55,7 +54,7 @@ const Signup = () => {
           {/* Form */}
           <form className="space-y-5">
             {fields.map((field) => (
-              <CustomInput
+              <Input
                 key={field.id}
                 id={field.id}
                 label={field.label}
@@ -67,9 +66,9 @@ const Signup = () => {
               />
             ))}
 
-            <CustomButton className="px-5 flex items-center font-semibold gap-2 rounded-lg shadow">
+            <Button className="px-5 flex items-center font-semibold gap-2 rounded-lg shadow">
               <p>Join Now</p>
-            </CustomButton>
+            </Button>
           </form>
           <div className="py-3 flex items-center text-normal gap-3">
             <span className="h-px w-full bg-foreground-light" />

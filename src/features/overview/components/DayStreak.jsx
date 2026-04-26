@@ -1,4 +1,4 @@
-import Bento from "@/components/Bento"
+import { Bento } from "@/components/ui/Bento"
 import { ChevronRight, Zap } from "lucide-react"
 
 const DayStreak = () => {

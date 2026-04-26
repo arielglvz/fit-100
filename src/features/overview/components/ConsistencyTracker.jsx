@@ -1,4 +1,4 @@
-import Bento from "@/components/Bento"
+import Bento from "@/components/ui/Bento"
 
 const ConsistencyTracker = () => {
   return (

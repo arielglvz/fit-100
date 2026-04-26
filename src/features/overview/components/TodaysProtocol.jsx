@@ -1,4 +1,4 @@
-import Bento from "@/components/Bento"
+import { Bento } from "@/components/ui/Bento"
 import { todays_protocol } from "@/features/overview/data"
 import React from "react"
 
@@ -18,7 +18,7 @@ const TodaysProtocol = () => {
         {todays_protocol.map((item) => {
           return (
             <Bento
-              key={item}
+              key={item.label}
               className="py-6 px-4 flex items-center justify-between rounded-md"
             >
               <p className="font-semibold text-foreground">{item.label}</p>

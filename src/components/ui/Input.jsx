@@ -2,7 +2,7 @@ import { cn } from "@/lib/cn"
 import { Eye, EyeClosed } from "lucide-react"
 import { useState } from "react"
 
-export const CustomInput = ({
+export const Input = ({
   className,
   label,
   name,

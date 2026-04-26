@@ -1,7 +1,7 @@
 import { groupByWeek } from "../utils/groupByWeek"
 import { getCompletionColor } from "../utils/getCompletionColor"
-import Bento from "@/components/Bento"
 import { activity_legend } from "@/features/overview/data"
+import { Bento } from "@/components/ui/Bento"
 
 export default function WeeklyGrid({ activities, onSelect }) {
   const weeks = groupByWeek(activities)

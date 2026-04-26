@@ -1,4 +1,4 @@
-import Bento from "@/components/Bento"
+import { Bento } from "@/components/ui/Bento"
 import { useState } from "react"
 import {
   LineChart,

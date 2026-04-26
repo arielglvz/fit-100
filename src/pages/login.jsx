@@ -1,10 +1,9 @@
 import { useState } from "react"
-import Bento from "@/components/Bento"
-import CustomButton from "@/components/CustomButton"
-import { CustomInput } from "@/components/CustomInput"
-import CustomLogo from "@/components/CustomLogo"
 import { updateFormField } from "@/lib/helpers"
 import { ArrowRight } from "lucide-react"
+import { Bento } from "@/components/ui/Bento"
+import { Button } from "@/components/ui/Button"
+import { Input } from "@/components/ui/Input"
 
 const fields = [
   {
@@ -31,7 +30,7 @@ const Login = () => {
   return (
     <div className="py-3 flex h-screen bg-gray-50">
       <div className="p-5 flex-1 overflow-y-auto space-y-6">
-        <CustomLogo label="ATHLETIC PRODUCTIVITY" />
+        <Logo label="ATHLETIC PRODUCTIVITY" />
         <Bento className="mx-auto max-w-xl py-10 px-5 space-y-6">
           {/* Title */}
           <div className="flex flex-col items-center space-y-2">
@@ -44,7 +43,7 @@ const Login = () => {
           {/* Form */}
           <form className="space-y-5" onSubmit={handleLogin}>
             {fields.map((field) => (
-              <CustomInput
+              <Input
                 key={field.id}
                 id={field.id}
                 name={field.id}
@@ -57,10 +56,10 @@ const Login = () => {
               />
             ))}
 
-            <CustomButton className="px-5 flex items-center font-semibold gap-2 rounded-lg shadow">
+            <Button className="px-5 flex items-center font-semibold gap-2 rounded-lg shadow">
               <p>Continue</p>
               <ArrowRight size={19} />
-            </CustomButton>
+            </Button>
           </form>
         </Bento>
         <div className="w-full ">
