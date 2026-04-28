@@ -1,24 +1,34 @@
 // import { useSelector } from "react-redux"
+import { supabase } from "@/lib/supabase"
+import { useEffect, useState } from "react"
 import { Navigate } from "react-router-dom"
 
 export default function AuthGuard({ children }) {
-  const isAuthenticated = true
-  // const auth = useSelector((state) => state.auth)
+  const [session, setSession] = useState(undefined)
 
-  // const user = auth?.user
-  // const loading = auth?.loading
+  useEffect(() => {
+    const getSession = async () => {
+      const { data } = await supabase.auth.getSession()
+      setSession(data.session)
+    }
 
-  // ⏳ optional loading state (prevents flicker)
-  // if (loading) return null
+    getSession()
 
-  // 🔐 not authenticated
-  // if (!user) {
-  //   return <Navigate to="/auth/login" replace />
-  // }
+    // When something change in user's auth it calls this function
+    const { data: listener } = supabase.auth.onAuthStateChange(
+      (_event, session) => {
+        setSession(session)
+      },
+    )
 
-  if (!isAuthenticated) {
-    return <Navigate to="/auth/login" replace />
-  }
+    return () => listener.subscription.unsubscribe()
+  }, [])
+
+  // Checkingg
+  if (session === undefined) return <p>Loading...</p>
+
+  // If no credentials
+  if (!session) return <Navigate to="/auth/login" replace />
 
   return children
 }

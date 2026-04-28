@@ -11,13 +11,13 @@ import {
 } from "recharts"
 
 const dataMap = {
-  "1M": [
+  "1W": [
     { label: "W1", weight: 80.2 },
     { label: "W2", weight: 79.8 },
     { label: "W3", weight: 79.1 },
     { label: "W4", weight: 78.5 },
   ],
-  "3M": [
+  "3W": [
     { label: "Jan 01", weight: 76.0 },
     { label: "Jan 02", weight: 75.4 },
     { label: "Jan 03", weight: 75.9 },
@@ -31,7 +31,7 @@ const dataMap = {
     { label: "Mar 03", weight: 78.3 },
     { label: "Mar 04", weight: 78.5 },
   ],
-  "6M": [
+  "6W": [
     { label: "Oct", weight: 73.2 },
     { label: "Nov", weight: 74.0 },
     { label: "Dec", weight: 75.1 },
@@ -39,7 +39,7 @@ const dataMap = {
     { label: "Feb", weight: 77.1 },
     { label: "Mar", weight: 78.5 },
   ],
-  "1Y": [
+  "1M": [
     { label: "Apr", weight: 72.0 },
     { label: "May", weight: 72.5 },
     { label: "Jun", weight: 73.0 },
@@ -56,10 +56,10 @@ const dataMap = {
 }
 
 const tabs = [
+  { key: "1W", label: "1", sub: "WEEK" },
+  { key: "3W", label: "3", sub: "WEEKS" },
+  { key: "6W", label: "6", sub: "WEEKS" },
   { key: "1M", label: "1", sub: "MONTH" },
-  { key: "3M", label: "3", sub: "MONTHS" },
-  { key: "6M", label: "6", sub: "MONTHS" },
-  { key: "1Y", label: "1", sub: "YEAR" },
 ]
 
 const CustomTooltip = ({ active, payload }) => {
@@ -79,11 +79,11 @@ const CustomTooltip = ({ active, payload }) => {
 }
 
 export default function WeightTrends() {
-  const [activeTab, setActiveTab] = useState("3M")
+  const [activeTab, setActiveTab] = useState("3W")
   const data = dataMap[activeTab]
   const currentWeight = 78.5
   const diff = -2.4
-
+  //
   const weights = data.map((d) => d.weight)
   const minW = Math.floor(Math.min(...weights)) - 1
   const maxW = Math.ceil(Math.max(...weights)) + 1
@@ -93,13 +93,18 @@ export default function WeightTrends() {
 
   return (
     <div>
-      <Bento>
+      <Bento className="rounded-xl">
         {/* Header */}
         <div className="flex items-start justify-between mb-1">
           <div>
             <h2 className="text-[15px] font-semibold text-header tracking-tight">
               Weight Trends
             </h2>
+            {/* TODO: Add function that if
+              "bulk": number up (green) number down (red)
+              "cut": number up (red) number down (green)
+              "maintain":  number up (red) number down (red) maintain green
+            */}
             <p className="text-[13px] text-foreground-muted mt-0.5">
               {diff > 0 ? "+" : ""}
               {diff}kg this month
@@ -107,7 +112,7 @@ export default function WeightTrends() {
           </div>
           <div className="text-right">
             <p
-              className="text-h1 font-bold text-header leading-none"
+              className="text-h1 font-bold text-[#40C463] leading-none"
               style={{ fontVariantNumeric: "tabular-nums" }}
             >
               {currentWeight}
@@ -120,7 +125,6 @@ export default function WeightTrends() {
 
         {/* Divider */}
         <div className="border-t border-border my-4" />
-
         {/* Chart */}
         <div className="relative" style={{ height: 140 }}>
           <ResponsiveContainer width="100%" height="100%">
@@ -140,7 +144,7 @@ export default function WeightTrends() {
               <Line
                 type="monotone"
                 dataKey="weight"
-                stroke="#18181b"
+                stroke="#40C463"
                 strokeWidth={2}
                 dot={false}
                 activeDot={{

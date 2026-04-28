@@ -1,16 +1,18 @@
 import { useState } from "react"
 import { cn } from "@/lib/cn"
 import { Minimize2, PanelTopOpen } from "lucide-react"
+import { useNavigate } from "react-router-dom"
+
+export const navItems = [
+  { label: "Overview", icon: "🏠", link: "/overview" },
+  { label: "Tracker", icon: "🎯", link: "/tracker" },
+  { label: "Analytics", icon: "📊", link: "/analytics" },
+  { label: "Settings", icon: "⚙️", link: "/settings" },
+]
 
 export const Sidebar = ({ isOpen, onClose }) => {
   const [collapsed, setCollapsed] = useState(false)
-
-  const navItems = [
-    { label: "Dashboard", icon: "🏠" },
-    { label: "Tracker", icon: "📊" },
-    { label: "Goals", icon: "🎯" },
-    { label: "Settings", icon: "⚙️" },
-  ]
+  const navigate = useNavigate()
 
   return (
     <>
@@ -38,7 +40,7 @@ export const Sidebar = ({ isOpen, onClose }) => {
           {!collapsed && (
             <p className="font-semibold text-sm tracking-wide">Performance</p>
           )}
-
+          {/* Collapse Btn */}
           <button
             onClick={() => setCollapsed(!collapsed)}
             className="text-gray-500 hover:text-black"
@@ -56,6 +58,7 @@ export const Sidebar = ({ isOpen, onClose }) => {
                 "w-full flex items-center gap-3 px-3 py-2 rounded-md text-sm transition",
                 "hover:bg-gray-100",
               )}
+              onClick={() => navigate(item.link)}
             >
               <span className="text-lg">{item.icon}</span>
 

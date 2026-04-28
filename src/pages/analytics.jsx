@@ -1,3 +1,5 @@
+import CalorieIntakeChart from "@/features/analytics/components/CalorieIntake"
+import ProgressBox from "@/features/analytics/components/ProgressBox"
 import WeightTrends from "@/features/analytics/components/WeightTrends"
 
 const Analytics = () => {
@@ -12,6 +14,11 @@ const Analytics = () => {
         </p>
       </div>
       <WeightTrends />
+      <CalorieIntakeChart />
+      <div className="max-w-sm flex justify-between gap-4">
+        <ProgressBox label="PROTEIN" part={32} whole={165} />
+        <ProgressBox label="CARBS" part={210} whole={1500} />
+      </div>
     </div>
   )
 }

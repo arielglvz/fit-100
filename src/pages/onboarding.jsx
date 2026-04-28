@@ -26,7 +26,7 @@ const Onboarding = () => {
   return (
     <div className="h-screen bg-background">
       {/* Header */}
-      <div className="py-4 w-full max-h-16 px-5 flex items-center justify-between border-b-2 border-b-muted">
+      {/* <div className="py-4 w-full max-h-16 px-5 flex items-center justify-between border-b-2 border-b-muted">
         <p className="text-header font-bold">Performance</p>
         <div className="flex items-center gap-3">
           <div className="w-16 h-1.5 bg-surface-progress rounded-md overflow-hidden shadow">
@@ -36,7 +36,7 @@ const Onboarding = () => {
             step 1/3
           </p>
         </div>
-      </div>
+      </div> */}
       <div className="px-5 py-6 flex-1 overflow-y-auto space-y-3">
         {/* <hr className="text-muted" /> */}
         <div className="flex flex-col items-left space-y-2">
@@ -70,7 +70,7 @@ const Onboarding = () => {
             />
 
             {/* HEIGHT */}
-            <CustomInput
+            <Input
               id="height"
               className="text-h2 font-bold"
               label="HEIGHT"
@@ -84,7 +84,7 @@ const Onboarding = () => {
           </div>
 
           {/* WEIGHT */}
-          <CustomInput
+          <Input
             id="start_weight"
             className="text-h1 font-bold text-center"
             label="CURRENT WEIGHT"

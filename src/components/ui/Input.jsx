@@ -12,6 +12,7 @@ export const Input = ({
   ...props
 }) => {
   const [isOpen, setIsOpen] = useState(false)
+  const Icon = isOpen ? Eye : EyeClosed
   return (
     <div className="flex flex-col gap-1 space-y-2">
       {label && (
@@ -36,21 +37,21 @@ export const Input = ({
         />
       ) : (
         <div
-          className={`px-5 py-2 flex items-center justify-between border rounded-md bg-foreground-light/20 focus-within:outline focus-within:outline-black ${
+          className={`pl-5 pr-3 py-2 flex items-center justify-between border rounded-md bg-foreground-light/20 focus-within:outline focus-within:outline-black ${
             error ? "border-red-500" : "border-gray-300 focus:border-black"
           }`}
         >
           <input
             id={id}
             {...props}
-            className={cn("outline-none bg-transparent", className)}
+            className={cn("w-full outline-none bg-transparent", className)}
             type={isOpen ? "text" : "password"}
           />
           <div
             onClick={() => setIsOpen((prev) => !prev)}
-            className="duration-300 ease-in-out text-normal"
+            className="duration-300 ease-in-out text-normal cursor-pointer"
           >
-            {isOpen ? <Eye /> : <EyeClosed />}
+            <Icon />
           </div>
         </div>
       )}
